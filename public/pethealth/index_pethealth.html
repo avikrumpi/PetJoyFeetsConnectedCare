@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Health Education and Awareness Platform</title>
+    <link rel="stylesheet" href="style_pethealth.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content-wrapper">
+        <div class="header-left">
+           <div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                
+                            <!-- Floating language selector -->
+                            <div class="language-selector-float">
+                                <label for="languageSelector">Language:</label>
+                                <select id="languageSelector">
+                                    <option value="en">English</option>
+                                    <option value="hi">Hindi</option>
+                                    <option value="bn">Bengali</option>
+                                    <option value="kn">Kannada</option>
+                                </select>
+                            </div>
+    
+                    <h1 id="platformTitle">🐶Pet Awareness & Care Platform</h1>
+                    
+                    <p id="platformSubtitle" style="margin-bottom: 1rem;">Comprehensive information on all pet's health conditions and prevention strategies—covering symptoms, early detection, treatment options, and risk factors for all major bone disease types and age groups. Get trustworthy guidance tailored for individuals and families in India.</p>
+
+
+                    <div class="nav-tabs">
+                        <!-- Your navigation buttons -->
+
+                        <div class="nav-tabs">
+                              <button class="nav-tab" data-section="diseases">Pet Health Conditions</button>
+                              <button class="nav-tab" data-section="when-to-see">When to See a Veterinarian</button>
+                              <button class="nav-tab" data-section="doctors">Find Veterinarian</button>
+                              <button class="nav-tab" data-section="prevention">Prevention Care</button>
+                              <button class="nav-tab" data-section="faq">FAQ</button>
+                              <button class="nav-tab" data-section="chatbot">Health Assistant</button>
+                              <button class="nav-tab" data-section="government">Government Initiatives</button>
+                              <button class="nav-tab" data-section="pet-care-for-life">Lifelong Pet Health</button>
+                              <button class="nav-tab" data-section="registration">Register</button>
+                              <button class="nav-tab" data-section="subscription">Subscribe</button>
+                              <!-- Add 5 new tabs below as needed -->
+                              <button class="nav-tab" data-section="nutrition">Nutrition</button>
+                              <button class="nav-tab" data-section="activity">Pet Activity</button>
+                              <button class="nav-tab" data-section="community">Community</button>
+                              <button class="nav-tab" data-section="emergency">Emergency</button>
+                              <button class="nav-tab" data-section="training">Training</button>
+                            </div>
+                </div>
+                </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+        </div>
+
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search for health conditions, symptoms, or treatments..." oninput="handleSearch()">
+    </div>
+
+    <div class="container">
+               <section id="diseases" class="section active">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏥 Different Types of Pet Diseases</h2>
+            <div class="diseases-grid" id="diseasesGrid"></div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <h3>No results found</h3>
+                <p>Try searching with different keywords</p>
+            </div>
+            </section>
+
+        <section id="when-to-see" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">👩‍⚕️ When to See a Veteranian</h2>
+            <div class="faq-container" id="whenToSeeContainer"></div>
+        </section>
+
+        <section id="doctors" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🔍 Find Veteranian</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto 2rem;">
+                <label for="citySelect" style="display: block; margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 600; color: var(--color-text);">
+                    📍 Select Your City:
+                </label>
+                <select id="citySelect" onchange="filterDoctorsByCity()" style="width: 100%; padding: 1rem 1.5rem; font-size: 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text); cursor: pointer; transition: all 0.3s ease;">
+                    <option value="">-- Select a City --</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                </select>
+            </div>
+
+            <div id="doctorsContainer"></div>
+
+            <p style="margin-top: 2rem; color: var(--color-text-secondary); font-style: italic; text-align: center;">
+                ⚠️ Always verify doctor credentials and call ahead to confirm availability and appointment procedures. These listings are for informational purposes. Please conduct your own research before visiting any healthcare provider.
+            </p>
+        </section>
+
+        <section id="prevention" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🛡️ Prevention & Care</h2>
+            <!-- Prevention and Care Section with Video Sidebar -->
+     <!-- Health Guidelines Bar (Full Width) -->
+        <div class="health-guidelines-banner">
+            <div class="banner-header">
+                <span class="banner-icon">💡</span>
+                <h3>Health Guidelines</h3>
+                <span class="banner-subtitle">Essential Patient's Bone and Joint Health Information</span>
+            </div>
+            
+            <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+              <!-- Lifestyle Guidelines -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                  <div class="card-header">
+                      <span class="card-icon">🌟</span>
+                      <h4>Essential Dog Health & Lifestyle Practices</h4>
+                  </div>
+                  <ul class="guideline-list">
+                    <li>Schedule regular veterinary check-ups every 6–12 months for all ages; senior dogs may need more frequent visits</li>
+                    <li>Feed age-appropriate, balanced nutrition; adjust portions for puppies, adults, and seniors</li>
+                    <li>Provide daily exercise—walks, play, and training, adapted to breed energy and age (short sessions for puppies and seniors)</li>
+                    <li>Ensure safe, engaging toys to stimulate mind and prevent boredom or anxiety</li>
+                    <li>Maintain dental health with brushing and dental treats; monitor for gum issues in senior dogs</li>
+                    <li>Groom regularly: bathe, brush, and check skin/fur for parasites or injuries, more often for long-haired breeds</li>
+                    <li>Keep clean water accessible at all times to prevent dehydration</li>
+                    <li>Ensure a comfortable sleep space in a quiet, safe area</li>
+                    </ul>
+                </div>
+              <!-- Vaccination Guidelines -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                  <div class="card-header">
+                      <span class="card-icon">💉</span>
+                      <h4>Essential Dog Vaccinations & Preventives</h4>
+                  </div>
+                     <ul class="guideline-list">
+                        <li><strong>Core vaccines for all dogs:</strong> Distemper, Parvovirus, Adenovirus (hepatitis), Rabies—initial series for puppies, then boosters as advised</li>
+                        <li><strong>Non-core vaccines:</strong> Bordetella (kennel cough), Leptospirosis, Lyme—based on risk/lifestyle</li>
+                        <li><strong>Annual deworming:</strong> For puppies and adults, tailored frequency for seniors</li>
+                        <li><strong>Flea/tick prevention:</strong> Year-round protection using vet-approved products</li>
+                        <li><strong>Heartworm testing & prevention:</strong> Start by 8–16 weeks; continue monthly prevention throughout life</li>
+                        <li>Consult your vet to personalize vaccination and preventive plan for your pet’s age, breed, and lifestyle</li>
+                    </ul>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+              <!-- Pet Screening Guidelines -->
+                      <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                          <div class="card-header">
+                              <span class="card-icon">🔬</span>
+                              <h4>Dog Health Screening Guidelines</h4>
+                          </div>
+                          <ul class="guideline-list">
+                            <li><strong>Puppy:</strong> Routine physical exams, fecal tests for parasites, initial bloodwork if congenital disease suspected</li>
+                            <li><strong>Adult:</strong> Annual checkup with full physical; fecal testing, bloodwork, dental exam</li>
+                            <li><strong>Senior:</strong> Bi-annual exam; blood and urine tests to check kidney, liver, thyroid; arthritis and mobility assessment</li>
+                            <li>Monitor weight at every vet visit; address sudden weight loss/gain promptly</li>
+                            <li>Annual dental checkups to catch early gum or tooth issues</li>
+                            <li>Screen for breed-specific conditions (hip/elbow dysplasia, cardiac issues)</li>
+                            <li>Review vaccination, deworming, and preventive history year-round</li>
+                        </ul>
+                     </div>
+
+              <!--  Preventive Measures -->
+              <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                  <div class="card-header">
+                      <span class="card-icon">🛡️</span>
+                      <h4>Dog Preventive Care Measure</h4>
+                  </div>
+                 <ul class="guideline-list">
+                    <li>Socialize puppies with people and friendly animals to reduce behavior issues</li>
+                    <li>Keep living areas clean; disinfect bedding and bowls frequently</li>
+                    <li>Supervise outdoor time: prevent access to toxic plants, human foods, or hazardous substances</li>
+                    <li>Never skip scheduled vaccinations or deworming doses</li>
+                    <li>Maintain leash protocols in public; ensure ID tags or microchip are current</li>
+                    <li>Monitor for any signs of illness: vomiting, diarrhea, coughing, limping, appetite loss—seek vet care early</li>
+                    <li>Adjust exercise and diet as your pet ages to prevent obesity and arthritis</li>
+                    <li>Provide ramps or soft bedding for senior dogs with joint pain</li>
+                    <li>Consult your vet about supplements (glucosamine, omega-3) if joint health is a concern</li>
+                </ul>
+            </div>
+            </div>
+
+              <div style="display: flex; gap: 2rem; align-items: stretch; margin-bottom: 2rem;">
+                    <!-- Essential Cat Health & Lifestyle Practices -->
+                    <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                        <div class="card-header">
+                            <span class="card-icon">🛡️</span>
+                            <h4>Essential Cat Health & Lifestyle Practices</h4>
+                        </div>
+                        <ul class="guideline-list">
+                            <li>Veterinary check-ups: annual visits for adults, twice-yearly for seniors (&gt;10 years)</li>
+                            <li>Nutrition: kitten formula (&lt;1 year), adult cat food (1–10 years), senior formula (&gt;10 years)</li>
+                            <li>Daily play: interactive toys, climbing structures, safe outdoor exploration</li>
+                            <li>Environmental enrichment: scratching posts, window perches, hiding places</li>
+                            <li>Dental care: dental treats, brushing if possible</li>
+                            <li>Grooming: frequent brushing for long-haired cats, regular nail trims</li>
+                            <li>Fresh water available at all times</li>
+                            <li>Clean litter box: scoop daily, sanitize weekly</li>
+                        </ul>
+                    </div>
+
+                    <!-- Essential Bird Health & Lifestyle Practices -->
+                    <div class="guideline-card" style="flex: 1; display: flex; flex-direction: column; justify-content: stretch;">
+                        <div class="card-header">
+                            <span class="card-icon">🛡️</span>
+                            <h4>Essential Bird Health & Lifestyle Practices</h4>
+                        </div>
+                        <ul class="guideline-list">
+                            <li>Annual avian veterinarian exams; more frequent for senior birds or those with health issues</li>
+                            <li>Balanced diet: pellets, fresh vegetables, limited seeds; formula for chicks (&lt;1 year)</li>
+                            <li>Daily exercise: time outside the cage, safe flights, climbing activities</li>
+                            <li>Social interaction: talk, gentle handling, visual stimulation</li>
+                            <li>Cage hygiene: clean cage, water, and food dishes daily</li>
+                            <li>Regular grooming: nail/beak trims as needed, misting for feather health</li>
+                            <li>Access to sunlight or full-spectrum lighting</li>
+                            <li>Protection from drafts, fumes, and sources of stress</li>
+                        </ul>
+                    </div>
+                </div>
+
+        <!-- ADD SPACE HERE -->
+        <div style="height: 2.5rem;"></div>
+
+        <!-- Content Area with Sidebar -->
+        <div class="prevention-wrapper">
+        <!-- Main Content Area (Prevention Container) -->
+            <div class="prevention-content">
+            <div id="preventionContainer" class="disease-grid"></div>
+        </div>
+
+        <!-- Video Sidebar (Right Side) -->
+        <aside class="prevention-video-sidebar">
+            <div class="video-resources-card">
+                <h3>📺 Educational Videos</h3>
+                <p class="video-subtitle">How do doctors determine and treat pet diseases</p>
+
+                <!-- Video 1: Pet Health Awareness -->
+                <a href="https://www.youtube.com/watch?v=1NnegTZKKu0" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/1NnegTZKKu0/mqdefault.jpg" alt="Pet Dental Care">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🐾 Pet Dental Care Series</h4>
+                        <p>How to Brush Your Dog and Cat's Teeth</p>
+                        <span class="duration">⏱️ 2 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 2: Nail Health for Cats  -->
+                <a href="https://www.youtube.com/watch?v=VmyU1zMN8YM" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/VmyU1zMN8YM/mqdefault.jpg" alt="Nail Trimming">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🦴 Vet Tutorial</h4>
+                        <p>How to Safely Trim a Cat's Nails.</p>
+                        <span class="duration">⏱️ 4 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 3: Pet Vaccination -->
+                <a href="https://www.youtube.com/watch?v=STg1IX4VbAs" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/STg1IX4VbAs/mqdefault.jpg" alt="Pet Vaccination">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>💉 Vet Advice</h4>
+                        <p>Which Vaccines Should I Give My Dog or Cat?</p>
+                        <span class="duration">⏱️ 5 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 4: Pet Goodbye -->
+                <a href="https://www.youtube.com/watch?v=n1RwanPH9fM" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/n1RwanPH9fM/mqdefault.jpg" alt="Pet Goodbye">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>❤️ Vet Advice</h4>
+                        <p>How Do You Know When It’s Time to Say Goodbye to a Pet?</p>
+                        <span class="duration">⏱️ 3 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 5: Understanding Puppy Biting -->
+                <a href="https://www.youtube.com/watch?v=iC1L3YTo14E" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/iC1L3YTo14E/mqdefault.jpg" alt="Puppy Biting">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🐶 Vet Tutorial</h4>
+                        <p>How to Get a Puppy to Stop Biting</p>
+                        <span class="duration">⏱️ 4 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 6: Pet-Human Health -->
+                <a href="https://www.youtube.com/watch?v=KuVZwyYhUyo" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/KuVZwyYhUyo/mqdefault.jpg" alt="The Power of Pets">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🩺 The Power of Pets</h4>
+                        <p>How animals affect human health</p>
+                        <span class="duration">⏱️ 57 min</span>
+                    </div>
+                </a>
+
+                <!-- Video 7: Pet Community -->
+                <a href="https://www.youtube.com/watch?v=KuVZwyYhUyo" target="_blank" rel="noopener noreferrer" class="video-link">
+                    <div class="video-thumb">
+                        <img src="https://img.youtube.com/vi/KuVZwyYhUyo/mqdefault.jpg" alt="Pet Adds Life">
+                        <div class="play-btn">▶</div>
+                    </div>
+                    <div class="video-details">
+                        <h4>🤍 Pet Adds Life</h4>
+                        <p>Pet Health Care Tips & Building a Pet Community</p>
+                        <span class="duration">⏱️ 57 min</span>
+                    </div>
+                </a>
+
+                </div>
+            </aside>
+        </div>
+            <div class="faq-container" id="preventionContainer"></div>
+        </section>
+
+        <section id="faq" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">❓Frequently Asked Questions</h2>
+            <div class="faq-container" id="faqContainer"></div>
+        </section>
+
+        <section id="chatbot" class="section">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🤖 AI Health Assistant</h2>
+            <div class="info-card" style="max-width: 900px; margin: 0 auto;">
+                  <div style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+                    <h3 style="color: white; margin-bottom: 1rem;">💬 Chat with our AI Health Advisor</h3>
+                    <p style="margin: 0; color: white; opacity: 0.95;">Get instant support on pet health disease topics through our smart chatbot. Ask questions about symptoms, screening, prevention, and treatments for common pet health diseases across all age groups—available in English or Bengali.</p>
+                </div>
+         <div class="chatbot-wrapper">
+        <!-- Left Sidebar for Health Assistant -->
+        <aside class="chatbot-sidebar">
+            <!-- Stats Card -->
+            <div class="sidebar-card stats-card">
+                <h3>📊 Conversation Stats</h3>
+                <div class="stat-row">
+                    <span class="stat-icon">💬</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Total Messages</span>
+                        <span class="stat-value" id="totalMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">✅</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Bot Responses</span>
+                        <span class="stat-value" id="botResponses">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔘</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Button Selections</span>
+                        <span class="stat-value" id="buttonClicks">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">⌨️</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Typed Messages</span>
+                        <span class="stat-value" id="typedMessages">0</span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-icon">🔗</span>
+                    <div class="stat-content">
+                        <span class="stat-label">Conversation Chain</span>
+                        <span class="stat-value" id="conversationChain">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Helplines Card -->
+            <div class="sidebar-card helpline-card">
+                <h3>🆘 Emergency Helplines</h3>
+                <div class="helpline-row">
+                    <span class="helpline-icon">📞</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Pet Helpline</div>
+                        <div class="helpline-number">181</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🏥</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">National Health</div>
+                        <div class="helpline-number">104</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">💚</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Tele-MANAS</div>
+                        <div class="helpline-number">14416</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">🚨</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Emergency</div>
+                        <div class="helpline-number">112</div>
+                    </div>
+                </div>
+                <div class="helpline-row">
+                    <span class="helpline-icon">👮</span>
+                    <div class="helpline-content">
+                        <div class="helpline-name">Women Safety</div>
+                        <div class="helpline-number">1091</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="sidebar-card actions-card">
+                <button class="action-btn reset-btn" onclick="resetChatbot()">
+                    <span>🔄</span> Reset Chat
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <div class="chatbot-main">
+            <div class="chat-header">
+                <h2>🤖 AI Health Assistant</h2>
+                <p>Get personalized health guidance</p>
+            </div>
+            
+
+                <div id="chatContainer" style="background: var(--color-surface); border: 2px solid var(--color-border); border-radius: var(--radius-md); height: 500px; display: flex; flex-direction: column; overflow: hidden;">
+                    <div id="chatMessages" style="flex: 1; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="bot-message">
+                            <div style="background: var(--color-secondary); color: var(--color-text); padding: 1rem; border-radius: var(--radius-md); max-width: 80%;">
+                                <strong>🌸 Health Assistant:</strong><br>
+                                নমস্কার! Hello! I'm your women's health assistant. How can I help you today?<br><br>
+                                আপনি কোন ধরনের স্বাস্থ্য সমস্যা নিয়ে কথা বলতে চান?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="border-top: 2px solid var(--color-border); padding: 1rem; background: var(--color-background);">
+                        <div style="display: flex; gap: 0.75rem;">
+                            <input type="text" id="chatInput" placeholder="Type your question here... আপনার প্রশ্ন লিখুন..." style="flex: 1; padding: 0.875rem; border: 2px solid var(--color-border); border-radius: var(--radius-sm); font-size: 1rem; transition: all 0.3s ease;">
+                            <button id="chatSendBtn" onclick="handleChatbot()" style="background: var(--color-primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); cursor: pointer; font-weight: 500; transition: all 0.3s ease;">
+                                Send 🚀
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Wellness For Her Section -->
+        <section id="pet-care-for-life" class="section" style="display: none;">
+           <!-- Success Stories Section -->
+                <div style="margin-top: 3rem;">
+                    <h3 style="color: var(--color-primary); text-align: center; margin-bottom: 2rem; font-size: 1.8rem; font-weight: 700;">🏆 Pioneers in Pet Health Treatment</h3>
+                    <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">
+                        Educational institutions and organizations championing pet health programs
+                    </p>
+
+                    <!-- Pet Health & Care Champions Section -->
+                    <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">
+                        ❤️ Corporates & Organizations Leading Pet Health & Care in India
+                    </h4>
+                    <div class="wellness-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+
+                        <!-- Corporate 1 -->
+                        <div class="wellness-card" style="border-left: 4px solid #378b29;">
+                            <div class="wellness-icon">🐾</div>
+                            <h3>Heads Up For Tails Foundation</h3>
+                            <p><strong>Pan-India Pet Wellness & Welfare Programs</strong></p>
+                            <ul>
+                                <li>Free vaccination & anti-rabies drives for street dogs and cats in urban centers</li>
+                                <li>Pet parent wellness events: grooming, basic health checks, parasite prevention</li>
+                                <li>Educational campaigns on responsible pet ownership, early disease detection</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 2 -->
+                        <div class="wellness-card" style="border-left: 4px solid #378b29;">
+                            <div class="wellness-icon">🩺</div>
+                            <h3>Wiggles.in</h3>
+                            <p><strong>Pet Health Services & Telemedicine Pioneer</strong></p>
+                            <ul>
+                                <li>Pet telehealth consultations, home vet services for vaccination and minor illness</li>
+                                <li>On-demand parasite control, annual health plans for all pet species</li>
+                                <li>First-aid training and emergency care workshops for pet parents</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 3 -->
+                        <div class="wellness-card" style="border-left: 4px solid #378b29;">
+                            <div class="wellness-icon">🐶</div>
+                            <h3>PetFed India</h3>
+                            <p><strong>Pet Festivals & Community Wellness Drives</strong></p>
+                            <ul>
+                                <li>Pan-India pet festivals promoting health, adoption, and wellness activities</li>
+                                <li>Vaccination booths, microchipping, and free health checks at events</li>
+                                <li>Workshops on nutrition, training, and positive behavior for dogs & cats</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 4 -->
+                        <div class="wellness-card" style="border-left: 4px solid #378b29;">
+                            <div class="wellness-icon">🏥</div>
+                            <h3>Vetic Clinics</h3>
+                            <p><strong>Quality Pet Healthcare Networks</strong></p>
+                            <ul>
+                                <li>24/7 animal clinics across cities with preventive, dental, and emergency care</li>
+                                <li>Dental, vaccination, nutrition, and senior pet health packages</li>
+                                <li>Annual wellness checkups and chronic disease screening for all pets</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 5 -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                            <div class="wellness-icon">🧴</div>
+                            <h3>Drools Foundation</h3>
+                            <p><strong>Pet Nutrition Quality & Community Programs</strong></p>
+                            <ul>
+                                <li>Affordable, science-based pet food for every age and species</li>
+                                <li>Awareness sessions on balanced nutrition, supplements and healthy treats</li>
+                                <li>Food donation drives for rescue groups and shelter animals</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 6 -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                            <div class="wellness-icon">😺</div>
+                            <h3>TailsLife</h3>
+                            <p><strong>Pet Grooming, Enrichment & Care</strong></p>
+                            <ul>
+                                <li>On-demand pet grooming, hygiene, and coat checks at home</li>
+                                <li>Workshops on anxiety, enrichment, and species-specific mental health</li>
+                                <li>Guides and live online events for training, nutrition, and senior cat care</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 7 -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                            <div class="wellness-icon">💉</div>
+                            <h3>Nestle Purina India</h3>
+                            <p><strong>Pet Nutrition & Preventive Health</strong></p>
+                            <ul>
+                                <li>Nutrition awareness workshops for pet parents and vets</li>
+                                <li>Joint campaigns on regular vaccination, parasite prevention, and healthy aging</li>
+                                <li>Research and pilot studies in pet food and preventive care</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 8 -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                            <div class="wellness-icon">🏡</div>
+                            <h3>Blue Cross of India</h3>
+                            <p><strong>Rescue, Shelter, & Preventive Care Pioneer</strong></p>
+                            <ul>
+                                <li>Animal birth control and sterilization across Indian metros</li>
+                                <li>Emergency medical rescue, outreach veterinary clinics and vaccination camps</li>
+                                <li>Public educational outreach on pet-human zoonoses and hygiene</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 9 -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                            <div class="wellness-icon">🐕‍🦺</div>
+                            <h3>Shivananda Animal Welfare</h3>
+                            <p><strong>Mobile Vet Clinic & Community Engagement</strong></p>
+                            <ul>
+                                <li>Doorstep vet services for underserved and rural pets</li>
+                                <li>Street animal rescue operations and mass vaccination drives</li>
+                                <li>Free workshops on pet care, behavior, and first aid for the public</li>
+                            </ul>
+                        </div>
+
+                        <!-- Corporate 10 -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                            <div class="wellness-icon">🎉</div>
+                            <h3>Petsathome India</h3>
+                            <p><strong>Retail, Accessories & Preventive Health Marketplace</strong></p>
+                            <ul>
+                                <li>One-stop pet care, nutrition, medicine, and accessory platform</li>
+                                <li>Lifestyle product innovations promoting pet comfort and hygiene</li>
+                                <li>Free in-store vet camps, grooming days, and pet parenting seminars</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <!-- Veterinarian Colleges & Educational Institutes Section -->
+                        <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">
+                            🐾 Top Indian Veterinary Colleges Championing Pet Health & Welfare
+                        </h4>
+                        <div class="wellness-grid">
+
+                            <!-- College 1: Dogs -->
+                            <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                                <div class="wellness-icon">🐶</div>
+                                <h3>Madras Veterinary College</h3>
+                                <p><strong>Chennai – Canine Health Innovation Hub</strong></p>
+                                <ul>
+                                    <li>Research in canine disease prevention, vaccination, and nutrition</li>
+                                    <li>Dog therapy programs, behavioral clinics and adoption drives</li>
+                                    <li>Annual workshops on parasite management and wellness</li>
+                                    <li>Community vaccination and street dog health camps</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 2: Cats -->
+                            <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                                <div class="wellness-icon">🐱</div>
+                                <h3>Karnataka Veterinary, Animal & Fisheries Sciences University</h3>
+                                <p><strong>Bangalore – Feline Wellness Leadership</strong></p>
+                                <ul>
+                                    <li>Clinical research in feline kidney disease, diet and safe indoor lifestyles</li>
+                                    <li>Student-led cat adoption & awareness campaigns with local shelters</li>
+                                    <li>Educational outreach on feline vaccinations and stress reduction</li>
+                                    <li>Hands-on training: cat-friendly exam rooms and enrichment modules</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 3: Birds -->
+                            <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                                <div class="wellness-icon">🦜</div>
+                                <h3>Bombay Veterinary College</h3>
+                                <p><strong>Mumbai – Avian Health Excellence</strong></p>
+                                <ul>
+                                    <li>Avian medicine: training in diagnosis, nutrition, and behavioral health</li>
+                                    <li>Student aviary projects & bird rescue partnerships</li>
+                                    <li>Workshops on safe cage setup, wing, beak, and nail care</li>
+                                    <li>Outreach programs for exotic and pet bird owners</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 4: Horses -->
+                            <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                                <div class="wellness-icon">🐴</div>
+                                <h3>Indian Veterinary Research Institute</h3>
+                                <p><strong>Izatnagar – Equine Musculoskeletal and Orthopedic Care</strong></p>
+                                <ul>
+                                    <li>Equine orthopedic screening: lameness, joint disease and fracture management</li>
+                                    <li>Annual seminars on horse nutrition, exercise, and injury prevention</li>
+                                    <li>Rural camps for working/hobby horse health checks</li>
+                                    <li>Student internships in stud farms and equestrian centers</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 5: Small Mammals & Exotic Pets -->
+                            <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                                <div class="wellness-icon">🐹</div>
+                                <h3>Guru Angad Dev Veterinary and Animal Sciences University</h3>
+                                <p><strong>Ludhiana – Small Pet & Rodent Health Research</strong></p>
+                                <ul>
+                                    <li>Specialty clinics for rabbits, guinea pigs, hamsters, and ferrets</li>
+                                    <li>Student-led seminars on exotic pet diet, housing, and enrichment</li>
+                                    <li>Training programs for small animal surgery and emergency care</li>
+                                    <li>Public outreach for safe handling and preventive care</li>
+                                </ul>
+                            </div>
+
+                            <!-- College 6: Farm Animals (Cows/Goats/Sheep) -->
+                            <div class="wellness-card" style="border-left: 4px solid #399aff;">
+                                <div class="wellness-icon">🐄</div>
+                                <h3>College of Veterinary Science & Animal Husbandry</h3>
+                                <p><strong>Jabalpur – Farm Animal Health & Nutrition Leadership</strong></p>
+                                <ul>
+                                    <li>Major research in milk quality, nutrition, and preventive care for cows/goats/sheep</li>
+                                    <li>Annual livestock wellness camps & zoonosis prevention outreach</li>
+                                    <li>Student exchange programs for rural animal husbandry</li>
+                                    <li>Hands-on vaccination and disease screening modules</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                   <!-- Pet Care Wellness & Apps Champions Section -->
+                    <h4 style="color: var(--color-primary); margin: 2rem 0 1rem; border-left: 4px solid var(--color-primary); padding-left: 1rem;">
+                        🐾 Pet Care Apps & Platforms Leading Holistic Animal Wellness
+                    </h4>
+                    <div class="wellness-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+
+                        <!-- App 1: Pet Health Tracker -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff; background: linear-gradient(135deg, rgba(119, 187, 90, 0.05), rgba(255,255,255,0.95));">
+                            <div class="wellness-icon">📊</div>
+                            <h3>Pet Health 360</h3>
+                            <p><strong>All-in-One Pet Wellness & Medical Organizer</strong></p>
+                            <ul>
+                                <li><strong>Programs:</strong> Age-based care reminders, weight and exercise logs for dogs, cats, birds, and small mammals</li>
+                                <li><strong>Features:</strong> Track health checks, medicine schedule, vaccinations and vet visits for multiple pet species</li>
+                                <li><strong>Services:</strong> Alerts for parasite prevention, deworming, grooming, and dental care</li>
+                                <li><strong>Impact:</strong> 70% improvement in regular vet checkups; fewer missed vaccinations</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 2: Pet Nutrition & Diet -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff; background: linear-gradient(135deg, rgba(84, 156, 178, 0.05), rgba(255,255,255,0.95));">
+                            <div class="wellness-icon">🥗</div>
+                            <h3>NutriPet+</h3>
+                            <p><strong>Custom Diet & Feeding Planner for Pets</strong></p>
+                            <ul>
+                                <li><strong>Focus:</strong> Personalized diet plans by pet age/type (puppy, kitten, adult, senior, birds, exotics)</li>
+                                <li><strong>Features:</strong> Nutrition calculator, food recalls/alerts, treat logging and ingredient scanner</li>
+                                <li><strong>Services:</strong> Allergy detection, obesity prevention, hydration tracking, senior pet nutrition guidance</li>
+                                <li><strong>Impact:</strong> 65% improved diet adherence; visible improvements in coat, energy, weight</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 3: Pet First Aid & Emergency Care -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff; background: linear-gradient(135deg, rgba(181, 100, 140, 0.05), rgba(255,255,255,0.95));">
+                            <div class="wellness-icon">🩺</div>
+                            <h3>FirstVet Pet Help</h3>
+                            <p><strong>On-Demand Vet Telemedicine & First Aid Guide</strong></p>
+                            <ul>
+                                <li><strong>Services:</strong> 24/7 video consults for pet emergencies; species-specific first aid guides for injury, poisoning, heatstroke</li>
+                                <li><strong>Features:</strong> Direct appointment booking, real-time triage, location-based vet finder</li>
+                                <li><strong>Impact:</strong> Quicker time-to-treatment for sick/injured pets; 80% of emergencies resolved at home</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 4: Pet Training & Behavior -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff; background: linear-gradient(135deg, rgba(108, 212, 181, 0.05), rgba(255,255,255,0.95));">
+                            <div class="wellness-icon">🐕</div>
+                            <h3>PawCoach</h3>
+                            <p><strong>Training & Socialization for Dogs, Cats & More</strong></p>
+                            <ul>
+                                <li><strong>Programs:</strong> Puppy, kitten, and bird training courses; problem behavior mod guides for adult/senior pets</li>
+                                <li><strong>Features:</strong> Interactive command demos, progress charts, treat tips, socialization goals</li>
+                                <li><strong>Services:</strong>  Live trainer chat, aggression/fear consults, adaptation to new homes/families</li>
+                                <li><strong>Impact:</strong> 50% reduction in anxiety and unwanted behaviors; improved pet-owner bond</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 5: Pet Vaccination & Preventive Care -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff; background: linear-gradient(135deg, rgba(255, 224, 102, 0.10), rgba(255,255,255,0.95));">
+                            <div class="wellness-icon">💉</div>
+                            <h3>VacciPet Reminder</h3>
+                            <p><strong>Vaccination & Preventive Health Organizer</strong></p>
+                            <ul>
+                                <li><strong>Focus:</strong> Species-specific vaccine schedules for dogs, cats, birds, exotics and farm animals</li>
+                                <li><strong>Features:</strong> Custom alerts for vaccine & preventive doses, track boosters and public health tips</li>
+                                <li><strong>Services:</strong> Vet locator, parasite prevention logs, wellness screening reminders</li>
+                                <li><strong>Impact:</strong> Higher community herd immunity; drop in missed or delayed doses</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 6: Pet Grooming & Hygiene -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff; background: linear-gradient(135deg, rgba(51, 158, 255, 0.05), rgba(255,255,255,0.95));">
+                            <div class="wellness-icon">🛁</div>
+                            <h3>GroomPal</h3>
+                            <p><strong>Grooming, Hygiene & Parasite Control Scheduler</strong></p>
+                            <ul>
+                                <li><strong>Features:</strong> Bath, brush, nail trim and ear clean reminders, grooming frequency by breed/species</li>
+                                <li><strong>Services:</strong> On-demand mobile groomer booking, flea/tick treatment tracking</li>
+                                <li><strong>Impact:</strong> 60% decrease in parasite issues and skin problems; improved fur/feather quality</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 7: Pet Activity & Play -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff; background: linear-gradient(135deg, rgba(154, 136, 215, 0.07), rgba(255,255,255,0.95));">
+                            <div class="wellness-icon">🎾</div>
+                            <h3>PlayfulPet</h3>
+                            <p><strong>Fun & Fitness Tracker for Active Pet Lives</strong></p>
+                            <ul>
+                                <li><strong>Programs:</strong> Indoor & outdoor play routines, activity goals by pet type & age</li>
+                                <li><strong>Features:</strong> Step counter, playtime timer, fetch/chase games for dogs/cats, interactive bird challenges</li>
+                                <li><strong>Impact:</strong> More active pets, less obesity, better behavior; 85% of owners report happier pets</li>
+                            </ul>
+                        </div>
+
+                        <!-- App 8: Pet Community & Adoption -->
+                        <div class="wellness-card" style="border-left: 4px solid #399aff; background: linear-gradient(135deg, rgba(250, 117, 139, 0.07), rgba(255,255,255,0.95));">
+                            <div class="wellness-icon">🏡</div>
+                            <h3>PetConnect Hub</h3>
+                            <p><strong>Community, Adoption & Lost/Found Pet Platform</strong></p>
+                            <ul>
+                                <li><strong>Services:</strong> Lost/found pet mapping, adoption listings, breed and rescue group directories</li>
+                                <li><strong>Features:</strong> Owner-to-owner messaging, pet story sharing, pet event calendar</li>
+                                <li><strong>Impact:</strong> 2x faster reunification of lost pets; increased adoption rates across species</li>
+                            </ul>
+                        </div>
+                    </div>
+                 </section>
+
+        <!-- Government Initiatives Section -->
+        <section id="government" class="section" style="display: none;">
+    <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">🏛️ Government Pet Health & Welfare Initiatives in West Bengal</h2>
+
+                 <!-- Key Initiatives Overview -->
+                <div class="initiatives-banner">
+                    <h3 style="color: #115b23;">🐾 Major Government Pet Health & Animal Welfare Programs</h3>
+                    <div class="initiatives-grid" style="color: #115b23;">
+                        <div class="initiative-item">
+                            <strong>Animal Birth Control (ABC) & Anti-Rabies Programme</strong>
+                            <p>District- and municipal-led sterilization and free anti-rabies vaccination drives for stray and community dogs and cats to curb population and rabies spread</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Livestock Health & Disease Control (LHDC) – West Bengal</strong>
+                            <p>Year-round mass vaccination against foot-and-mouth disease, brucellosis, and common zoonoses for cattle, goats, and backyard livestock</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>State Veterinary Mobile Clinics & Camps</strong>
+                            <p>Mobile animal vans and pop-up clinics provide free vaccination, deworming, minor surgery, basic first aid, and farmer outreach, in rural and remote blocks</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>West Bengal Animal Resources Development Department (WB ARDD)</strong>
+                            <p>Oversees all district government veterinary hospitals, animal shelters, and preventive health drives with door-to-door and campus clinics</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Animal Welfare Board – District-level Pet Help Lines</strong>
+                            <p>Quick-response animal welfare and rescue hotlines for lost/found pets, cruelty reporting, abandoned animal pickup and first aid</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Gaushala and Animal Shelter Grant Scheme</strong>
+                            <p>State funding for shelter homes, adoption drives, and animal rehoming, especially for senior pets, injured strays, and neglected animals</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Poultry & Avian Health Surveillance Program</strong>
+                            <p>District labs and farms offer disease surveillance, vaccination for common bird illnesses, and support for backyard poultry keepers</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Humane Education & Responsible Ownership Campaigns</strong>
+                            <p>School and community outreach on adoption, animal care, sterilization, pet health, and zoonotic disease prevention</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Subsidized Pet Medicines & Vaccines</strong>
+                            <p>Distribution of low-cost vaccines (anti-rabies, distemper, parvo, panleukopenia, etc.) and basic veterinary medicines via district animal hospitals and camps</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>District Cattle Welfare Programs</strong>
+                            <p>Free deworming, mineral supplementation, and reproductive screening for dairy cows, buffalo, and goats</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Exotic & Companion Animal Outreach Services</strong>
+                            <p>Guidance and free checkup camps for birds, rabbits, guinea pigs, and urban exotics, including awareness against illegal trade of protected species</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Pashu Sathi – Farmer Livelihood and Pet Health Integration</strong>
+                            <p>Livestock and pet keepers can access animal health support, nutrition guidance, and vet consults through panchayat offices</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Disaster Response & Animal Relief Vans</strong>
+                            <p>Rapid deployment of relief vans and mobile animal first-aid post-floods/cyclones to rescue, treat, and shelter pets/livestock</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>National Digital Animal Health Platform (NDAHP)</strong>
+                            <p>Digital pet and livestock health card rollout for vaccine tracking, health history, and reminders, starting pilot districts in West Bengal</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>All Bengal Pet Registration Drive</strong>
+                            <p>Mandatory pet registration for dogs and certain cat breeds to ensure vaccination and responsible ownership; includes municipal tags and health record books</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Public-Private Animal Welfare Partnerships</strong>
+                            <p>MoUs with leading NGOs and corporates for large-scale shelters, animal ambulance services, and street animal rehabilitation</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Veterinary Education Scholarship & Training Programs</strong>
+                            <p>Support for veterinary students and para-vets—scholarships, practical training, and rural placement incentives</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Annual Animal Health Awareness Week</strong>
+                            <p>Block and district-level campaigns—school visits, poster competitions, village nukkad shows, and free pet checkup camps</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Biodiversity & Zoonosis Surveillance Labs</strong>
+                            <p>Tracking of new and emerging pet/livestock diseases, with coordinated lab reporting and public health alerts for zoonotic outbreaks</p>
+                        </div>
+                        <div class="initiative-item">
+                            <strong>Women in Animal Care – SHG Training</strong>
+                            <p>Self-help group (SHG) member training for women in basic pet/livestock care, vaccination outreach, and animal rescue methods</p>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Interactive Map Section -->
+                <div class="map-section">
+                    <h3 style="margin-bottom: 1rem;">📍 Healthcare Drives & Centers in West Bengal Districts</h3>
+                   <p style="margin-bottom: 1.5rem; color: white;">
+                        <strong>Districts Highlighted:</strong> Murshidabad, Bankura, Birbhum, Asansol (Paschim Bardhaman), Purulia, Bardhaman (Purba Bardhaman)
+                    </p>
+                    
+                    <!-- Google My Maps Embed -->
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/d/embed?mid=10LcqEx9WHKcxQhEku84mG6lJoVGvE-Q" 
+                            width="100%" 
+                            height="600" 
+                            style="border:0; border-radius: var(--radius-lg);" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+      
+                <!-- District-wise Healthcare Centers -->
+                <div class="district-list">
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🏥 Key Healthcare Centers by District</h3>
+                    
+                <div class="district-card">
+                <h4 style="color: #115b23;">📍 Murshidabad</h4>
+                <ul style="color: #115b23;">
+                    <li><strong>Murshidabad District Animal Hospital & Veterinary Clinic</strong> – Berhampore</li>
+                    <li>Mobile vaccination camps for dogs, cats, and livestock in Kandi, Lalgola & Domkal</li>
+                    <li>Free anti-rabies & deworming drives; feline wellness checkups</li>
+                    <li>Training and awareness: animal birth control, responsible pet ownership</li>
+                </ul>
+            </div>
+
+            <div class="district-card">
+                <h4 style="color: #115b23;">📍 Bankura</h4>
+                <ul style="color: #115b23;">
+                    <li><strong>Bankura District Veterinary Hospital</strong> – Bankura</li>
+                    <li>District-level dog & cattle vaccination, livestock wellness checkups</li>
+                    <li>AYUSH Suswasthya Kendras with outreach for village animal health</li>
+                    <li>Pet grooming, parasite control, and nutrition workshops</li>
+                </ul>
+            </div>
+
+            <div class="district-card">
+                <h4 style="color: #115b23;">📍 Birbhum</h4>
+                <ul style="color: #115b23;">
+                    <li><strong>Birbhum Government Animal Health Centre</strong> – Rampurhat</li>
+                    <li>Rural mobile animal clinics: vaccination, nutrition, first aid</li>
+                    <li>Dog, cat, and livestock annual wellness & tick control camps</li>
+                    <li>Animal rescue, adoption and community pet health events</li>
+                </ul>
+            </div>
+
+            <div class="district-card">
+                <h4 style="color: #115b23;">📍 Asansol (Paschim Bardhaman)</h4>
+                <ul style="color: #115b23;">
+                    <li><strong>Asansol District Animal Hospital</strong> – Asansol</li>
+                    <li>Durgapur Animal Health & Pet Vaccination Camp</li>
+                    <li>Local pet adoption, spay/neuter clinics, and welfare drives</li>
+                    <li>Mobile animal wellness vans for remote communities</li>
+                </ul>
+            </div>
+
+            <div class="district-card">
+                <h4 style="color: #115b23;">📍 Purulia</h4>
+                <ul style="color: #115b23;">
+                    <li><strong>Purulia Animal Husbandry & Pet Center</strong> – Purulia</li>
+                    <li>Muktidhara Initiative: tribal region pet & livestock outreach</li>
+                    <li>Remote mobile animal health checkups and vaccination</li>
+                    <li>District spay/neuter and wellness events for dogs/cats</li>
+                </ul>
+            </div>
+
+            <div class="district-card">
+                <h4 style="color: #115b23;">📍 Bardhaman (Purba Bardhaman)</h4>
+                <ul style="color: #115b23;">
+                    <li><strong>Bardhaman District Veterinary Hospital</strong> – Bardhaman</li>
+                    <li>Pet and livestock disease screening under Swasthya Ingit</li>
+                    <li>Local block veterinary clinics: Katwa, Kalna – yearly checkups/grooming</li>
+                    <li>Pet health and adoption outreach in urban/rural Bardhaman</li>
+                </ul>
+            </div>
+
+            <div class="district-card">
+                <h4 style="color: #115b23;">📍 Kolkata</h4>
+                <ul style="color: #115b23;">
+                    <li><strong>Alipore Animal Hospital</strong> – Kolkata</li>
+                    <li>Mobile pet vaccination, rescue, and adoption drives throughout the city</li>
+                    <li>City-wide pet health camps: parasite control, first aid, microchipping</li>
+                    <li>Partner training with NGOs for stray and owned pet wellness</li>
+                    <li>Free pet wellness events in slum and peri-urban Kolkata</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <section id="registration" class="section" style="display: none;">
+                  <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Register</h2>
+                  <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; align-items: flex-start;">
+                    <!-- LEFT COLUMN: Registration -->
+                    <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                      <div class="info-card" style="width: 100%; margin: 0; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                            <div style="text-align: center; margin-bottom: 2rem;">
+                               <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Pet Health</h3>
+                               <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on pet health topics.</p>
+                            </div>
+                            <form id="registrationForm" onsubmit="handleRegistration(event)">
+                               <!-- Full Name -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  👤 Full Name *
+                                  </label>
+                                  <input
+                                     type="text"
+                                     id="fullName"
+                                     name="fullName"
+                                     required
+                                     placeholder="Enter your full name"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Email Address -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📧 Email Address *
+                                  </label>
+                                  <input
+                                     type="email"
+                                     id="emailAddress"
+                                     name="emailAddress"
+                                     required
+                                     placeholder="your.email@example.com"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- City of Residence -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📍 City of Residence
+                                  </label>
+                                  <input
+                                     type="text"
+                                     id="cityOfResidence"
+                                     name="cityOfResidence"
+                                     placeholder="e.g., Kolkata, Delhi, Mumbai"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Phone Number (Optional) -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  📱 Phone Number (Optional)
+                                  </label>
+                                  <input
+                                     type="tel"
+                                     id="phoneNumber"
+                                     name="phoneNumber"
+                                     placeholder="+91 XXXXXXXXXX"
+                                     pattern="[0-9+\-\s]+"
+                                     style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                                     onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                                     onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                               </div>
+                               <!-- Veter Disease Type Selector -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label for="veterType" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                                  Pet Disease / Condition
+                                  </label>
+                                  <select id="veterType" name="veterType" required style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);">
+                                    <option value="">Select pet health condition</option>
+                                    <!-- General & Preventive Health -->
+                                    <option value="obesity">Obesity / Overweight</option>
+                                    <option value="diabetes">Diabetes Mellitus</option>
+                                    <option value="kidney_disease">Kidney Disease</option>
+                                    <option value="liver_disease">Liver Disease / Hepatitis</option>
+                                    <option value="heart_disease">Heart Disease / Cardiac Problems</option>
+                                    <option value="respiratory_disease">Respiratory Disease (Cough, Asthma)</option>
+                                    <option value="anaemia">Anaemia</option>
+                                    <option value="dehydration">Dehydration</option>
+                                    <option value="fever">Fever / Infection</option>
+                                    <!-- Dental & Mouth -->
+                                    <option value="dental_disease">Dental Disease / Gum Infection</option>
+                                    <option value="tooth_fracture">Tooth Fracture / Loss</option>
+                                    <option value="oral_mass">Oral Mass / Tumor</option>
+                                    <!-- Skin, Coat & Allergies -->
+                                    <option value="skin_allergy">Skin Allergy / Dermatitis</option>
+                                    <option value="pruritus">Itching / Pruritus</option>
+                                    <option value="mange">Mange / Parasitic Skin Disease</option>
+                                    <option value="hot_spots">Hot Spots / Acute Moist Dermatitis</option>
+                                    <option value="fleas_ticks">Flea / Tick / Parasite Infestation</option>
+                                    <option value="hair_loss">Hair Loss / Alopecia</option>
+                                    <option value="ear_infection">Ear Infection / Otitis</option>
+                                    <!-- Gastrointestinal -->
+                                    <option value="vomiting">Vomiting</option>
+                                    <option value="diarrhoea">Diarrhea</option>
+                                    <option value="constipation">Constipation</option>
+                                    <option value="bloat">Bloat / Gastric Dilatation</option>
+                                    <option value="worm_infection">Worm (Helminth) Infection</option>
+                                    <option value="anal_gland_disease">Anal Gland Disease</option>
+                                    <!-- Eye & Vision -->
+                                    <option value="eye_infection">Eye Infection / Conjunctivitis</option>
+                                    <option value="cataracts">Cataract / Lens Opacity</option>
+                                    <option value="dry_eye">Dry Eye / Keratoconjunctivitis</option>
+                                    <option value="retinal_disease">Retinal Disease</option>
+                                    <!-- Reproductive/Urogenital -->
+                                    <option value="urinary_infection">Urinary Tract Infection (UTI)</option>
+                                    <option value="pyometra">Pyometra / Uterine Infection</option>
+                                    <option value="prostatic_disease">Prostatic Disease (Dogs)</option>
+                                    <option value="testicular_tumor">Testicular Tumor</option>
+                                    <option value="mammary_tumor">Mammary Tumor</option>
+                                    <option value="false_pregnancy">False Pregnancy</option>
+                                    <!-- Infectious & Zoonotic -->
+                                    <option value="rabies">Rabies</option>
+                                    <option value="distemper">Canine Distemper</option>
+                                    <option value="parvovirus">Parvovirus Infection</option>
+                                    <option value="panleukopenia">Feline Panleukopenia</option>
+                                    <option value="leptospirosis">Leptospirosis</option>
+                                    <option value="feline_leukemia">Feline Leukemia Virus (FeLV)</option>
+                                    <option value="feline_aids">Feline Immunodeficiency Virus (FIV)</option>
+                                    <option value="avian_influenza">Avian Influenza (Birds)</option>
+                                    <!-- Cancer & Tumor -->
+                                    <option value="lymphoma">Lymphoma</option>
+                                    <option value="mast_cell_tumor">Mast Cell Tumor</option>
+                                    <option value="hemangiosarcoma">Hemangiosarcoma</option>
+                                    <option value="osteosarcoma">Osteosarcoma (Bone Cancer)</option>
+                                    <!-- Nervous System & Behavior -->
+                                    <option value="seizure">Seizure / Epilepsy</option>
+                                    <option value="anxiety">Behavioral Issues / Anxiety</option>
+                                    <option value="cognitive_decline">Cognitive Dysfunction (Old Age)</option>
+                                    <!-- Other Conditions -->
+                                    <option value="heat_stroke">Heat Stroke</option>
+                                    <option value="trauma">Trauma / Injury</option>
+                                    <option value="poisoning">Poisoning / Toxic Exposure</option>
+                                    <option value="wound">Wound / Bite Injury</option>
+                                    <option value="deafness">Deafness / Hearing Loss</option>
+                                    <option value="blindness">Blindness / Vision Loss</option>
+                                    <option value="mobility_issue">Mobility Issue / Paralysis</option>
+                                 <!-- Add more conditions if needed -->
+                                  </select>
+                               </div>
+                               <!-- Join Group Checkbox -->
+                               <div style="margin-bottom: 1.5rem;">
+                                  <label>
+                                  <input type="checkbox" id="joinCommunity" name="joinCommunity">
+                                  I want to join a community/support group for my disease type
+                                  </label>
+                               </div>
+                               <!-- Privacy Consent -->
+                               <div style="margin-bottom: 2rem;">
+                                  <label style="display: flex; align-items: start; cursor: pointer;">
+                                  <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                                  <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                                  I agree to register to this healthcare platform and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                                  </span>
+                                  </label>
+                               </div>
+                               <!-- Submit Button -->
+                               <button
+                                  type="submit"
+                                  style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                                  onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                                  onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                               ✓ Register Now
+                               </button>
+                               <!-- Privacy Note -->
+                               <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                                  🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                               </p>
+                            </form>
+                         </div>
+                      </div>
+
+                      <div style="flex: 1 1 400px; min-width: 340px; max-width: 520px;">
+                          <div id="patientGroupsSection" style="width: 100%; margin: 0;">
+                            <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Pet Parents & Support Communities</h3>
+                            <div id="groupsList">
+
+                              <!-- Existing groups from previous reply (8 items) -->
+                             <div class="group-card" style="border-left: 4px solid #0288d1; margin-bottom: 1rem; padding: 1rem; background: rgba(2,136,209,0.05); border-radius: 8px;">
+                              <b>Pet Diabetes & Endocrine Care Group</b><br>
+                              <span>Active Members: 120</span><br>
+                              <span>Diet advice, insulin routines, and support for pets with diabetes or endocrine issues.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #8bc34a; margin-bottom: 1rem; padding: 1rem; background: rgba(139,195,74,0.05); border-radius: 8px;">
+                              <b>Healthy Pet Weight Circle</b><br>
+                              <span>Active Members: 105</span><br>
+                              <span>Best practices, diet plans, and weight loss journeys for overweight cats, dogs, and exotics.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #ab47bc; margin-bottom: 1rem; padding: 1rem; background: rgba(171,71,188,0.05); border-radius: 8px;">
+                              <b>Pet Anxiety & Behavior Hub</b><br>
+                              <span>Active Members: 132</span><br>
+                              <span>Expert help, calming routines, and positive reinforcement training for behavioral issues.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #ffb300; margin-bottom: 1rem; padding: 1rem; background: rgba(255,179,0,0.05); border-radius: 8px;">
+                              <b>Dental Health for Pets Forum</b><br>
+                              <span>Active Members: 61</span><br>
+                              <span>All about oral hygiene, tartar management and gum disease prevention for dogs and cats.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #fb8c00; margin-bottom: 1rem; padding: 1rem; background: rgba(251,140,0,0.05); border-radius: 8px;">
+                              <b>Cancer Support Community (Pets)</b><br>
+                              <span>Active Members: 70</span><br>
+                              <span>Experiences in fighting cancer, navigating chemo, care, and palliative support for companion animals.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #00bfae; margin-bottom: 1rem; padding: 1rem; background: rgba(0,191,174,0.05); border-radius: 8px;">
+                              <b>Allergy & Skin Wellness Group</b><br>
+                              <span>Active Members: 85</span><br>
+                              <span>Tips, product reviews, and allergy relief from itchy skin, hotspots, and chronic irritation.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #e53935; margin-bottom: 1rem; padding: 1rem; background: rgba(229,57,53,0.05); border-radius: 8px;">
+                              <b>Parvovirus & Infectious Disease Group</b><br>
+                              <span>Active Members: 58</span><br>
+                              <span>Awareness, vaccination, and navigating treatment for viral, bacterial and zoonotic infections.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #455a64; margin-bottom: 1rem; padding: 1rem; background: rgba(69,90,100,0.05); border-radius: 8px;">
+                              <b>Epilepsy & Seizure Management</b><br>
+                              <span>Active Members: 62</span><br>
+                              <span>Help for managing epilepsy, finding medication routines, and dealing with emergency seizures.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #7b1fa2; margin-bottom: 1rem; padding: 1rem; background: rgba(123,31,162,0.05); border-radius: 8px;">
+                              <b>Pet Mobility Assistance Group</b><br>
+                              <span>Active Members: 47</span><br>
+                              <span>Wheelchairs for pets, support harnesses, and mobility challenges for the disabled or senior pet.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #ad1457; margin-bottom: 1rem; padding: 1rem; background: rgba(173,20,87,0.05); border-radius: 8px;">
+                              <b>Kidney & Renal Care Support</b><br>
+                              <span>Active Members: 64</span><br>
+                              <span>Discussion of chronic and acute kidney issues, hydration strategies, and special diets for pets.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #43a047; margin-bottom: 1rem; padding: 1rem; background: rgba(67,160,71,0.05); border-radius: 8px;">
+                              <b>Feline Health & Wellness Hub</b><br>
+                              <span>Active Members: 97</span><br>
+                              <span>Cats-only space for health issues: kidney, dental, mobility, behaviour, and senior cat care.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #7e57c2; margin-bottom: 1rem; padding: 1rem; background: rgba(126,87,194,0.05); border-radius: 8px;">
+                              <b>Canine Clubhouse: Dog Health Talk</b><br>
+                              <span>Active Members: 128</span><br>
+                              <span>Dog breed wellness, joint care, ear infections, and nutrition tips by pet parents.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #3949ab; margin-bottom: 1rem; padding: 1rem; background: rgba(57,73,171,0.05); border-radius: 8px;">
+                              <b>Bird & Exotic Pet Wellness Forum</b><br>
+                              <span>Active Members: 34</span><br>
+                              <span>Care, nutrition, and health management for birds, rabbits, reptiles, and small mammals.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #fb8c00; margin-bottom: 1rem; padding: 1rem; background: rgba(251,140,0,0.05); border-radius: 8px;">
+                              <b>Vaccination & Preventive Care Group</b><br>
+                              <span>Active Members: 101</span><br>
+                              <span>All you need to know about vaccine schedules, boosters, parasite preventives and preventive wellness.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #689f38; margin-bottom: 1rem; padding: 1rem; background: rgba(104,159,56,0.05); border-radius: 8px;">
+                              <b>Senior/Special Needs Pets Community</b><br>
+                              <span>Active Members: 59</span><br>
+                              <span>Care tips for senior pets, mobility, chronic illness, comfort and end-of-life decisions.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #fbc02d; margin-bottom: 1rem; padding: 1rem; background: rgba(251,192,45,0.05); border-radius: 8px;">
+                              <b>Puppy & Kitten Parenting Collective</b><br>
+                              <span>Active Members: 74</span><br>
+                              <span>Advice on vaccination, growth, nutrition, and housetraining for new pet parents.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                            <div class="group-card" style="border-left: 4px solid #c62828; margin-bottom: 1rem; padding: 1rem; background: rgba(198,40,40,0.05); border-radius: 8px;">
+                              <b>Emergency & First Aid Pet Network</b><br>
+                              <span>Active Members: 43</span><br>
+                              <span>First response tips, wound management, choking, poisoning, and disaster prep for all pet owners.</span><br>
+                              <button type="button" class="connect-btn" style="margin-top: 0.8rem; background: var(--color-primary); color: white; border-radius: 5px; border: none; padding: 0.4em 1.1em; cursor: pointer;">Join Group</button>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+            </section>
+
+
+
+        <section id="subscription" class="section" style="display: none;">
+            <h2 style="color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">📝 Subscribe</h2>
+            
+            <div class="info-card" style="max-width: 650px; margin: 0 auto; padding: 2.5rem; box-shadow: 0 8px 24px rgba(139, 79, 139, 0.15);">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Stay Informed About Women's Health</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem;">Subscribe to receive monthly health tips, screening reminders, and updates on women's health topics.</p>
+                </div>
+                
+                <form id="registrationForm" onsubmit="handleRegistration(event)">
+                    <!-- Full Name -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            👤 Full Name *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName"
+                            required 
+                            placeholder="Enter your full name"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Email Address -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="emailAddress" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📧 Email Address *
+                        </label>
+                        <input 
+                            type="email" 
+                            id="emailAddress" 
+                            name="emailAddress"
+                            required 
+                            placeholder="your.email@example.com"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- City of Residence -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="cityOfResidence" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📍 City of Residence
+                        </label>
+                        <input 
+                            type="text" 
+                            id="cityOfResidence" 
+                            name="cityOfResidence"
+                            placeholder="e.g., Kolkata, Delhi, Mumbai"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Phone Number (Optional) -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="phoneNumber" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📱 Phone Number (Optional)
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            name="phoneNumber"
+                            placeholder="+91 XXXXXXXXXX"
+                            pattern="[0-9+\-\s]+"
+                            style="width: 100%; padding: 0.875rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 1rem; transition: all 0.3s ease; background: var(--color-surface);"
+                            onfocus="this.style.borderColor='var(--color-primary)'; this.style.boxShadow='0 0 0 3px rgba(139, 79, 139, 0.1)';"
+                            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none';">
+                    </div>
+                    
+                    <!-- Subscription Preferences -->
+                    <div style="margin-bottom: 2rem; padding: 1.25rem; background: rgba(139, 79, 139, 0.05); border-radius: var(--radius-md); border-left: 4px solid var(--color-primary);">
+                        <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; color: var(--color-text); font-size: 0.95rem;">
+                            📬 I want to receive:
+                        </label>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeMonthly" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Monthly Health Tips & Articles</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeScreening" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Screening & Checkup Reminders</span>
+                            </label>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="subscribeUpdates" checked style="width: 18px; height: 18px; margin-right: 0.75rem; cursor: pointer; accent-color: var(--color-primary);">
+
+                                <span style="font-size: 0.95rem; color: var(--color-text);">Health Awareness Updates</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Consent -->
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: flex; align-items: start; cursor: pointer;">
+                            <input type="checkbox" required style="width: 18px; height: 18px; margin-right: 0.75rem; margin-top: 0.2rem; cursor: pointer; accent-color: var(--color-primary);">
+                            <span style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.5;">
+                                I agree to receive health-related communications and understand that my data will be kept confidential and not shared with third parties. I can unsubscribe anytime.
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        style="width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; border: none; border-radius: var(--radius-md); font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(139, 79, 139, 0.3);"
+                        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 79, 139, 0.4)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(139, 79, 139, 0.3)';">
+                        ✓ Subscribe Now
+                    </button>
+                    
+                    <!-- Privacy Note -->
+                    <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-top: 1.5rem; text-align: center; line-height: 1.5;">
+                        🔒 Your data is kept confidential and will not be shared with third parties. Read our <a href="#" style="color: var(--color-primary); text-decoration: underline;">Privacy Policy</a>.
+                    </p>
+                </form>
+                
+                <!-- Success Message (Hidden by default) -->
+                <div id="registrationSuccess" style="display: none; text-align: center; padding: 2rem;">
+                    <div style="width: 80px; height: 80px; background: var(--color-success); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);">
+                        <span style="font-size: 3rem; color: white;">✓</span>
+                    </div>
+                    <h3 style="color: var(--color-primary); margin-bottom: 0.5rem;">Subscription Successful!</h3>
+                    <p style="color: var(--color-text-secondary); font-size: 1rem;">Thank you for subscribing! You'll receive our next newsletter soon.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Helplines Section -->
+        <div class="helplines-section">
+            <h3>📞 Important Helplines</h3>
+            <div class="helplines-grid">
+                <div class="helpline-card">
+                    <strong>Pet Helpline</strong>
+                    <p class="helpline-number">181</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>National Health Helpline</strong>
+                    <p class="helpline-number">104</p>
+                </div>
+                <div class="helpline-card">
+                    <strong>Swasthya Sathi</strong>
+                    <p class="helpline-number">1800-313-1313</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="diseaseDetailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p>&copy; 2025 Pet Health Awareness Platform. All rights reserved.</p>
+            <p>Disclaimer: This platform provides educational information and is not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+   <script src="app_pethealth.js"></script>
+</body>
+</html>
