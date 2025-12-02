@@ -1328,7 +1328,7 @@ const SERVICES_FEATURES = [
         "Digital health records for every pet",
         "AI-driven health and care suggestions",
         "Automated alerts and notifications",
-        "Secure data, ISO & ABDM compliant platform",
+        "Secure data, ISO & NDLM compliant platform",
         "Pet identification, digital ID, QR card options",
     ]},
     // Diagnostics & Prescriptions
@@ -2584,7 +2584,7 @@ const SecurityTrustSection = () => {
         { icon: Lock, title: "ISO 27001", subtitle: "Information Security Certified", color: "teal" },
         { icon: Shield, title: "256-bit Encryption", subtitle: "Military-Grade Security", color: "blue" },
         { icon: UserCheck, title: "HIPAA Compliant", subtitle: "International Standards", color: "green" },
-        { icon: CheckSquare, title: "ABDM Certified", subtitle: "Government Approved (Demo)", color: "indigo" },
+        { icon: CheckSquare, title: "NDLM Certified", subtitle: "Government Approved (Demo)", color: "indigo" },
     ];
 
     const dataPolicyPatient = [
